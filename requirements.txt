@@ -1,4 +1,4 @@
-numpy
-pandas
 tensorflow
 streamlit
+pandas
+numpy
