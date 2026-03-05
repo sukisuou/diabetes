@@ -12,7 +12,7 @@ medians = pd.read_pickle('train_medians.pkl')
 
 # Page configuration
 st.set_page_config(layout="wide")
-st.sidebar.header('FEatures (leave 0 if NA)')
+st.sidebar.header('Features (leave 0 if NA)')
 
 # Feature selection on sidebar
 def get_user_input():
