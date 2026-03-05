@@ -56,6 +56,11 @@ if st.button("Predict"):
 
     # Predict
     prediction = model.predict(user_data.values.astype(np.float32))
+    prob = float(prediction[0][0])
+
+    # Display results
     st.subheader("Risk: ")
-    risk = 'Diabetic' if prediction[0][0] > 0.5 else 'Not Diabetic'
-    st.write(risk, f'({prediction[0][0]:.2%} possibility)')
+    if prob > 0.5:
+        st.error(f"Prediction: Diabetic ({prob:.2%})")
+    else:
+        st.success(f"Prediction: Not Diabetic ({prob:.2%})")
