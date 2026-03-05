@@ -59,7 +59,7 @@ if st.button("Predict"):
     prob = float(prediction[0][0])
 
     # Display results
-    st.subheader("Risk: ")
+    st.subheader("Risk (true if > 50%): ")
     if prob > 0.5:
         st.error(f"Prediction: Diabetic ({prob:.2%})")
     else:
