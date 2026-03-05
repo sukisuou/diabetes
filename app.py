@@ -57,4 +57,4 @@ if st.button("Predict"):
     prediction = model.predict(user_data)
     st.subheader("Risk: ")
     risk = 'Diabetic' if prediction[0][0] > 0.5 else 'Not Diabetic'
-    st.write(risk)
+    st.write(risk, f'({prediction[0][0]:.2%})')
