@@ -10,9 +10,9 @@ import streamlit as st
 model = tf.keras.models.load_model('diabetes_model.keras')
 medians = pd.read_pickle('train_medians.pkl')
 
-
 # Page configuration
 st.set_page_config(layout="wide")
+st.sidebar.header('FEatures (leave 0 if NA)')
 
 # Feature selection on sidebar
 def get_user_input():
