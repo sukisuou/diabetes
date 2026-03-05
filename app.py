@@ -22,7 +22,7 @@ def get_user_input():
     skin = st.sidebar.number_input('Skin Thickness (mm)',  min_value=0.0, max_value=99.0, step=1.0, value=0.0)
     insulin = st.sidebar.number_input('Insulin (mu U/ml)',  min_value=0.0, max_value=846.0, step=1.0, value=0.0)
     bmi = st.sidebar.number_input('BMI (kg/m^2)',  min_value=0.0, max_value=67.1, step=1.0, value=0.0)
-    pedigree = st.sidebar.number_input('Diabetes Pedigree Function',  min_value=0.00, max_value=2.42, step=0.100, value=0.00)
+    pedigree = st.sidebar.number_input('Diabetes Pedigree Function',  min_value=0.00, max_value=2.42, step=0.100, value=0.00, format="%.4f")
     age = st.sidebar.number_input('Age (years)',  min_value=21, max_value=81, step=1, value=21)
 
     user_data = {
