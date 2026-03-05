@@ -55,7 +55,7 @@ if st.button("Predict"):
     user_data = user_data.fillna(medians)
 
     # Predict
-    prediction = model.predict(user_data)
+    prediction = model.predict(user_data.values.astype(np.float32))
     st.subheader("Risk: ")
     risk = 'Diabetic' if prediction[0][0] > 0.5 else 'Not Diabetic'
     st.write(risk, f'({prediction[0][0]:.2%} possibility)')
