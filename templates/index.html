@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #2d302f; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { background-color: rgb(189, 188, 188); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 400px; }
+        
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        h1 { text-align: center; }
+
+        .result { margin-top: 20px; text-align: center; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Diabetes Prediction</h1>
+        <form action="/predict" method="POST">
+            <label>
+                Pregnancies (0 if none)
+                <input type="text" name="Pregnancies" placeholder="Pregnancies" required>
+            </label>
+            <label>
+                Glucose level (0-199)
+                <input type="text" name="Glucose" placeholder="Glucose" required>
+            </label>
+            <label>
+                Blood Pressure (mm Hg)
+                <input type="text" name="BloodPressure" placeholder="Blood Pressure" required>
+            </label>
+            <label>
+                Skin Thickness (mm)
+                <input type="text" name="SkinThickness" placeholder="Skin Thickness" required>
+            </label>
+            <label>
+                Insulin (mu U/ml)
+                <input type="text" name="Insulin" placeholder="Insulin" required>
+            </label>
+            <label>
+                BMI (kg/m^2)
+                <input type="text" name="BMI" placeholder="BMI" required>
+            </label>
+            <label>
+                Diabetes Pedigree Function
+                <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
+            </label>
+            <label>
+                Age (years)
+                <input type="text" name="Age" placeholder="Age" required>
+            </label>      
+
+            <br>
+
+            <input type="submit" value="Predict">
+        </form>
+        <div class="result">
+            <p>{{ prediction_text }}</p>
+        </div>
+    </div>
+</body>
+</html>
